@@ -1,4 +1,4 @@
-# VST2 GUI Research
+# VST2 GUI research
 
 This repo is intended to be a brain-dump for anyone interested in working on GUIs for [vst-rs](https://github.com/RustAudio/vst-rs).
 
@@ -28,8 +28,8 @@ Each of these approaches will have their own page to document findings.
 ## Information
 
  - [Background on how GUIs work in VST2](vst2-gui-background.md)
- - Requirements specification for a Rust VST2 GUI crate **(TODO)**
- - Notes on using an already-existing Rust GUI crate **(TODO)**
- - Notes on creating a new GUI create from the ground up **(TODO)**
+ - [Requirements specification for a Rust VST2 GUI crate](vst2-gui-requirements.md) **(TODO)**
+ - [Notes on using an already-existing Rust GUI crate](already-existing-crates.md)
+ - [Notes on creating a new GUI crate from the ground up](gui-from-scratch.md)
  - Resources that might be worth looking into **(TODO)**
     - example: `rutabaga`, my GUI prototype repo, `rtb-rs`, etc.

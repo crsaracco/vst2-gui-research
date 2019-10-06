@@ -4,7 +4,7 @@
 
 *(**TODO:** at the time of writing, I haven't worked on GUIs in a while, so certain things are a bit generalized and hand-wavey. More precise information is always good!)*
 
-## Host Window Creation
+## Host window creation
 
 The DAW handles the lifecycle of the actual GUI window: creating it, opening it, closing it, etc.
 
@@ -26,7 +26,7 @@ fn open(&mut self, parent: *mut c_void) -> bool;
  - In Linux, that parent pointer is actually just an ID number to the parent window. You can convert the parent pointer by doing `parent as u32` and then connecting to the window through [`xcb::create_window`](https://github.com/crsaracco/vst2-gui-prototypes/blob/master/linux-opengl-vst/src/editor/window/mod.rs#L112-L114).
  - **TODO:** Mac OS X
 
-## Events and Threads
+## Events and threads
 
 *(**TODO:** Super hazy information ahead. Please contribute if you know more!)*
 
@@ -34,4 +34,4 @@ VST2 expects the DAW to have complete control over the application, including it
 
 This generally means that you should use the platform's native event handling system instead of spawning your own thread, which is true on Windows and Mac OS X. Linux, however, doesn't have a "native event handling system" to use, so you *have* to spawn your own thread. The joys of platform-dependent development!
 
-The problem, though, is that this is **incompatible** with *most (all?)* of the GUI crates in the Rust ecosystem. They almost always expect you to be building a standalone GUI application, so they assume that you want your own event loop and event processing thread, so they make it for you. Check out the "Notes on using an already-existing Rust GUI crate" page for more info **(TODO)**.
+The problem, though, is that this is **incompatible** with *most (all?)* of the GUI crates in the Rust ecosystem. They almost always expect you to be building a standalone GUI application, so they assume that you want your own event loop and event processing thread, so they make it for you. Check out the ["Notes on using an already-existing Rust GUI crate"](already-existing-crates.md) page for more info.
