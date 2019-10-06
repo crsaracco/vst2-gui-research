@@ -24,7 +24,13 @@ fn open(&mut self, parent: *mut c_void) -> bool;
 
  - In Windows, that parent pointer is really a `winapi::HWND__`. You can convert the parent pointer by doing `parent as *mut winapi::HWND__`, and connecting to the window through [`CreateWindowExW`](https://github.com/crsaracco/vst2-gui-prototypes/blob/master/windows-opengl-vst/src/editor/window/win32_window.rs#L23-L36).
  - In Linux, that parent pointer is actually just an ID number to the parent window. You can convert the parent pointer by doing `parent as u32` and then connecting to the window through [`xcb::create_window`](https://github.com/crsaracco/vst2-gui-prototypes/blob/master/linux-opengl-vst/src/editor/window/mod.rs#L112-L114).
- - **TODO:** Mac OS X
+ - On MacOS, the parent pointer type depends on a few factors:
+   - If the plugin is running in 32bit and the plugin has *not* received a `canDo` request for `"hasCockosViewAsConfig"`, the parent pointer will be a Carbon `WindowRef`.
+   - If the plugin is running in 64bit, or if it is running in 32bit and *has* received a `canDo` request for `"hasCockosViewAsConfig"`, the parent pointer will be a Cocoa `NSView *`.
+   - When receiving the `"hasCockosViewAsConfig"` `canDo` request, the plugin should return `0xbeef0000` to the host.
+   - Honestly, just don't ship 32bit anymore. It's dead completely as of 10.15, and the additional complexity of wrapping the Carbon window is best avoided.
+  
+   - AudioUnits have a slightly different model. Rather than asking the plugin to parent the `NSView` itself, instead the plugin returns an `NSView *` to the host, and the host can then handle the reparenting itself. This, however, means that you need to override `[NSView dealloc]` or `[NSView release]` in order to figure out when the host has closed the plugin editor so the plugin can release resources.
 
 Most crates assume you just want to get up-and-running with a cross-platform standalone GUI window, so they hide all the platform-specific stuff from you. They have no functionality to "connect" to a platform-specific window, like we need to do here, so there's no way to actually get a `*mut c_void` handle out of them. **This is one of the main reasons why most UI toolkits won't work for VST.** *(Check out the ["Notes on using an already-existing Rust GUI crate"](already-existing-crates.md) page for more specific information.)*
 
