@@ -31,5 +31,4 @@ Each of these approaches will have their own page to document findings.
  - [Requirements specification for a Rust VST2 GUI crate](vst2-gui-requirements.md) **(TODO)**
  - [Notes on using an already-existing Rust GUI crate](already-existing-crates.md)
  - [Notes on creating a new GUI crate from the ground up](gui-from-scratch.md)
- - Resources that might be worth looking into **(TODO)**
-    - example: `rutabaga`, my GUI prototype repo, `rtb-rs`, etc.
+ - [Additional resources that might be worth looking into](additional-resources.md)
