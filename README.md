@@ -32,4 +32,4 @@ Each of these approaches will have their own page to document findings.
  - [Notes on using an already-existing Rust GUI crate](./already-existing-crates.md)
  - [Notes on creating a new GUI crate from the ground up](./gui-from-scratch.md)
  - [Additional resources that might be worth looking into](./additional-resources.md)
- - [Miscellaneous notes to sort into other pages](./miscellaneous-notes.md)
+    - [Notes on Rutabaga implementation details, specifically](./rutabaga-notes.md)

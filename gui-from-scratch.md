@@ -4,9 +4,9 @@ If no already-existing GUI crates work well out-of-the-box for our purposes, wha
 
 Unfortunately, "our requirements" actually encompass a *lot* of work:
 
- - Window creation / attaching to a parent window
- - Cross-platform GUI context creation (OpenGL, Vulkan/Metal, etc)
- - Event handling
+ - Window creation / attaching to a parent window -- *for each platform*
+ - Cross-platform GUI context creation (OpenGL, Vulkan/Metal, etc) -- *for each platform*
+ - Event handling -- *for each platform*
  - Wrapping all of that up in a platform-agnostic crate for others to use
 
 And that's before we try to create *another* crate for drawing on the GUI context -- circles, rectangles, menu systems, etc.
