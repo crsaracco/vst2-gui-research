@@ -27,8 +27,9 @@ Each of these approaches will have their own page to document findings.
 
 ## Information
 
- - [Background on how GUIs work in VST2](vst2-gui-background.md)
- - [Requirements specification for a Rust VST2 GUI crate](vst2-gui-requirements.md) **(TODO)**
- - [Notes on using an already-existing Rust GUI crate](already-existing-crates.md)
- - [Notes on creating a new GUI crate from the ground up](gui-from-scratch.md)
- - [Additional resources that might be worth looking into](additional-resources.md)
+ - [Background on how GUIs work in VST2](./vst2-gui-background.md)
+ - [Requirements specification for a Rust VST2 GUI crate](./vst2-gui-requirements.md) **(TODO)**
+ - [Notes on using an already-existing Rust GUI crate](./already-existing-crates.md)
+ - [Notes on creating a new GUI crate from the ground up](./gui-from-scratch.md)
+ - [Additional resources that might be worth looking into](./additional-resources.md)
+ - [Miscellaneous notes to sort into other pages](./miscellaneous-notes.md)
