@@ -21,3 +21,11 @@ Also, put a date next to your findings so we can judge how fresh the information
 ## gfx-rs
 
 *(TODO)*
+
+## Iced
+
+Repo: https://github.com/hecrj/iced
+
+[12/12/2019]
+
+There is a [very early vst-rs gui example](https://github.com/hatoo/vst-rs-example-iced) with an associated [iced issue](https://github.com/hecrj/iced/issues/118) tracking the ability to pass state into the GUI application. 
